@@ -1,3 +1,5 @@
 dist/
 assets/icons/
+.vercel/
 .DS_Store
+.vercel
