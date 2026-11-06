@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>brahimlakhal3 — portfolio · JetBrains Mono · Dark</title>
+    <meta
+      name="description"
+      content="Portfolio of the 15 public GitHub projects of brahimlakhal3, presented as an IDE workspace: Kotlin and Android apps, Bun and Node services, Next.js and Angular platforms, Spring Boot labs, machine-learning notebooks and a LaTeX course template."
+    />
+    <meta name="color-scheme" content="dark" />
+    <link rel="stylesheet" href="styles/portfolio.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233574f0'/%3E%3Cpath d='M7 6h4.5a4.5 4.5 0 0 1 .6 8.96L18 18h-3l-3.6-3H9v3H7z' fill='%23fff'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="window">
+      <!-- ======================= title bar ======================= -->
+      <header class="titlebar">
+        <div class="wctrl" aria-hidden="true">
+          <i class="c1"></i><i class="c2"></i><i class="c3"></i>
+        </div>
+        <div class="brand">
+          <span class="mark"><svg class="mi mi-14" aria-hidden="true"><use href="#i-github" /></svg></span>
+          <b>brahimlakhal3</b>
+          <span>/ portfolio</span>
+        </div>
+        <nav class="crumbs" id="crumbs" aria-label="Path"></nav>
+
+        <div class="title-right">
+          <button class="run-cfg" id="runCfg" title="Run configuration">
+            <svg class="mi mi-14" aria-hidden="true"><use href="#i-folder" /></svg>
+            <span id="runCfgName">workspace</span>
+            <svg class="mi mi-14" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+            <svg class="mi mi-14 play" aria-hidden="true"><use href="#i-play-circle-outline" /></svg>
+          </button>
+          <button class="icon-btn" id="btnSearch" title="Search everywhere (⇧⇧)">
+            <svg class="mi mi-18" aria-hidden="true"><use href="#i-magnify" /></svg>
+          </button>
+          <button class="icon-btn" id="btnPaletteHelp" title="Keyboard shortcuts">
+            <svg class="mi mi-18" aria-hidden="true"><use href="#i-keyboard-outline" /></svg>
+          </button>
+          <button class="icon-btn" id="btnSettings" title="Tool window settings">
+            <svg class="mi mi-18" aria-hidden="true"><use href="#i-cog" /></svg>
+          </button>
+          <span class="avatar" id="avatar" title="github.com/brahimlakhal3">BL</span>
+        </div>
+      </header>
+
+      <!-- ======================= main body ======================= -->
+      <div class="body" id="body">
+        <nav class="activity" id="activity" aria-label="Tool windows">
+          <button class="abtn" data-view="project" title="Project (Alt+1)">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-folder" /></svg>
+          </button>
+          <button class="abtn" data-view="find" title="Find in workspace">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-magnify" /></svg>
+          </button>
+          <button class="abtn" data-view="git" title="Git log">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-source-branch" /></svg>
+          </button>
+          <button class="abtn" data-view="starred" title="Starred repositories">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-star-outline" /></svg>
+            <span class="badge" id="starBadge">3</span>
+          </button>
+          <button class="abtn" data-view="grid" title="All projects as cards">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-view-grid" /></svg>
+          </button>
+          <span class="spacer"></span>
+          <button class="abtn" id="abTerm" title="Terminal (Alt+F12)">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-console-line" /></svg>
+          </button>
+          <button class="abtn" id="abRight" title="Toggle Structure panel">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-format-list-bulleted-type" /></svg>
+          </button>
+          <button class="abtn" data-view="about" title="About this workspace">
+            <svg class="mi mi-20" aria-hidden="true"><use href="#i-information-outline" /></svg>
+          </button>
+        </nav>
+
+        <aside class="tool" id="tool" aria-label="Tool window">
+          <div class="tool-head">
+            <span id="toolTitle">Project</span>
+            <span class="grow"></span>
+            <button class="icon-btn" id="toolCollapse" title="Hide">
+              <svg class="mi mi-14" aria-hidden="true"><use href="#i-close" /></svg>
+            </button>
+          </div>
+          <div class="tool-body" id="toolBody"></div>
+        </aside>
+
+        <div class="vsplit" id="vsplit" aria-hidden="true"></div>
+
+        <main class="editor">
+          <div class="tabbar" id="tabbar" role="tablist"></div>
+          <div class="gutter-strip" id="gutterStrip">
+            <span class="grow" id="gutterPath"></span>
+            <span id="gutterBadge"></span>
+            <div class="seg" id="modeSeg">
+              <button data-mode="code" title="Show editor">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-file-code" /></svg>Editor
+              </button>
+              <button data-mode="split" title="Show editor and preview">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-view-grid" /></svg>Split
+              </button>
+              <button data-mode="preview" title="Show preview">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-eye-outline" /></svg>Preview
+              </button>
+            </div>
+          </div>
+          <div class="editor-wrap" id="editorWrap">
+            <section class="pane src" id="paneSrc" tabindex="0"></section>
+            <div class="split-divider" aria-hidden="true"></div>
+            <section class="pane prev" id="panePrev" tabindex="0"></section>
+          </div>
+
+          <div class="hsplit hresizer" id="hresizer" aria-hidden="true"></div>
+          <section class="bottom collapsed" id="bottom">
+            <div class="bt-tabs">
+              <button class="on" data-bt="term">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-console-line" /></svg>Terminal
+              </button>
+              <button data-bt="problems">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-alert-circle-outline" /></svg>Problems<span id="probCount"></span>
+              </button>
+              <button data-bt="news">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-history" /></svg>Activity
+              </button>
+              <span class="grow"></span>
+              <button class="icon-btn" id="btClear" title="Clear console">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-trash-can-outline" /></svg>
+              </button>
+              <button class="icon-btn" id="btHide" title="Hide">
+                <svg class="mi mi-14" aria-hidden="true"><use href="#i-close" /></svg>
+              </button>
+            </div>
+            <div class="bt-body" id="btTerm">
+              <div id="termOut"></div>
+              <div class="term-input">
+                <span class="ps1">brahimlakhal3@portfolio:~$</span>
+                <input id="termIn" placeholder="help · ls · open KOTLIN_WHATSCRAFT · clone · stars · lang Kotlin" autocomplete="off" spellcheck="false" />
+              </div>
+            </div>
+            <div class="bt-body" id="btProblems" hidden></div>
+            <div class="bt-body" id="btNews" hidden></div>
+          </section>
+        </main>
+
+        <aside class="right" id="right" aria-label="Structure">
+          <div class="tool-head">
+            <span>Structure</span>
+            <span class="grow"></span>
+            <button class="icon-btn" id="rightCollapse" title="Hide">
+              <svg class="mi mi-14" aria-hidden="true"><use href="#i-close" /></svg>
+            </button>
+          </div>
+          <div class="right-body" id="rightBody"></div>
+        </aside>
+      </div>
+
+      <!-- ======================= status bar ======================= -->
+      <footer class="statusbar" id="statusbar">
+        <span class="sbtn acc hide-sm" id="stBranch" title="Default branch">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-source-branch" /></svg><span>main</span>
+        </span>
+        <span class="sbtn ok" id="stCheck">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-check-circle-outline" /></svg><span>No problems in workspace</span>
+        </span>
+        <span class="sbtn hide-sm" id="stProjects" title="Repositories">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-folder-multiple-outline" /></svg><span>15</span>
+        </span>
+        <span class="grow"></span>
+        <span class="sbtn hide-sm" id="stStars">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-star-outline" /></svg><span>3</span>
+        </span>
+        <span class="sbtn hide-sm" id="stUpdated" title="Last activity"></span>
+        <span class="sbtn" id="stPos">Ln 1, Col 1</span>
+        <span class="sbtn hide-sm">Spaces: 2</span>
+        <span class="sbtn hide-sm">UTF-8</span>
+        <span class="sbtn acc hide-sm" title="Active file family">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-memory" /></svg><span>JetBrains Mono · SemiBold</span>
+        </span>
+        <button class="sbtn" id="stHelp" title="Keyboard shortcuts">
+          <svg class="mi mi-14" aria-hidden="true"><use href="#i-keyboard-outline" /></svg>
+        </button>
+      </footer>
+    </div>
+
+    <!-- ======================= search everywhere ======================= -->
+    <div class="scrim" id="scrim" hidden>
+      <div class="popup" role="dialog" aria-label="Search everywhere">
+        <div class="searchrow">
+          <svg class="mi mi-18" aria-hidden="true"><use href="#i-magnify" /></svg>
+          <input id="q" placeholder="Search projects, languages, actions…  (type 'kotlin', 'api', 'ML')" autocomplete="off" spellcheck="false" />
+          <kbd>Esc</kbd>
+        </div>
+        <div class="tabsrow">
+          <span class="on">All</span>
+          <span>Files</span>
+          <span>Actions</span>
+        </div>
+        <div class="results" id="results"></div>
+        <div class="foot">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> open</span>
+          <span><kbd>⇧⇧</kbd> open anywhere</span>
+          <span><kbd>Alt</kbd>+<kbd>1</kbd> project · <kbd>Alt</kbd>+<kbd>F12</kbd> terminal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+
+    <script src="app/icons.js"></script>
+    <script src="app/projects.js"></script>
+    <script src="app/ide.js"></script>
+  </body>
+</html>
